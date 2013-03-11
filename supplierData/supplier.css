@@ -1,0 +1,126 @@
+﻿.serviceTable
+{
+    border-style: Solid;
+    border-color: blue;
+    border-top-width: 2px;
+    border-width: 2px;
+}
+.serviceAvail
+{
+    width: 50px;
+    text-align: right;
+    font-weight: 800;
+}
+
+#navigation {
+    background-color: #000FFF;
+    color: #FFFFFF;
+    float: left;
+    margin-left: 7px;
+    margin-right: 6px;
+}
+
+#navigation h2, #navigation hr {
+
+display: block;
+
+padding: 10px 5px;
+
+border-bottom-width: 1px;
+
+border-bottom-style: solid;
+
+border-bottom-color: #C0E3BF;
+
+}
+
+#navigation ul {
+
+margin: 0px;
+
+padding: 0px;
+
+list-style: none;
+
+}
+
+#navigation ul li {
+
+border-bottom-width: 1px;
+
+border-bottom-style: solid;
+
+border-bottom-color: #C0E3BF;
+
+}
+
+#navigation ul li a {
+
+padding: 8px;
+
+display: block;
+
+background-color: #C0E3BF;
+
+color: #000000;
+
+text-decoration: none;
+
+border-bottom-width: 1px;
+
+border-bottom-style: solid;
+
+border-bottom-color: #C0E3BF;
+
+}
+
+#navigation ul li a:hover {
+
+background-color: #BFE3DE;
+
+}
+
+table
+{
+    border-collapse:collapse;
+}
+
+table  td
+{
+       padding:4px;
+       text-align:right; 
+}
+.infobub
+{
+    width:680px;
+    float:left;
+    border-color:black;
+    border-style:solid;
+    padding:10px;
+}
+
+
+.selectCustList
+{
+    float:right;
+
+}
+
+.custList
+{
+    width:250px;
+    height:200px;
+}
+
+.bottomImg
+{
+        float:left;
+}
+
+.txtBox
+{
+    height:120px;
+    width:630px;
+    padding:5px;
+    font-family: ariana;
+}

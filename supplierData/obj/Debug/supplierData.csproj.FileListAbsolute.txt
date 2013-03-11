@@ -1,0 +1,4 @@
+c:\users\bmcardle\documents\visual studio 2012\Projects\supplierData\supplierData\bin\supplierData.dll
+c:\users\bmcardle\documents\visual studio 2012\Projects\supplierData\supplierData\bin\supplierData.pdb
+c:\users\bmcardle\documents\visual studio 2012\Projects\supplierData\supplierData\obj\Debug\supplierData.dll
+c:\users\bmcardle\documents\visual studio 2012\Projects\supplierData\supplierData\obj\Debug\supplierData.pdb
