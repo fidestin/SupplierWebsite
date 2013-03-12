@@ -22,7 +22,30 @@
            // });
         });
 
+        function sendEmails() {
+            try {
+                var jcustEMail = JSON.stringify(getArrCustomerEmails());
+                var params = '{"campaignID": ' + campaignURL + ',"customerEmails":' + jcustEMail + '}';
+                $.ajax({
+                    type: "POST",
+                    data: params,
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    url: "http://www.fidestin.com/supplier/supplierfactory.asmx/SendCampaignEmails",
+                    success: function (result) {
+                        alert('Emails sent');
+                    },
+                    error: function () {
+                        $(document).ajaxError(function (e, xhr, settings, exception) {
+                            debugalert('error in: ' + settings.url + ' \n' + 'error:\n' + xhr.responseText + "\n" + exception.message);
+                        });
+                        return -99;
+                    }
+                })
 
+            }
+            catch (b) { alert('Error ' + b); }
+        }
         
         function removeEmail() {
             console.log('removeEmail');
@@ -33,17 +56,18 @@
             };
         }
 
-
-
-        function saveEmails() {
-            console.log('saveEmail');
+        function getArrCustomerEmails() {
+            var arrCustEmails = new Array();
             var lstEmails = $('#<%=ListBox1.ClientID%>>option');
-            var arrEmails = new Array();
             for (var i = 0; i < lstEmails.length; i++) {
                 var custEmail = lstEmails[i].innerText;
-                arrEmails[i] = custEmail;
+                arrCustEmails[i] = custEmail;
             }
-            saveCustomers(campaignURL, arrEmails);
+            return arrCustEmails;
+        }
+
+        function saveEmails() {
+            saveCustomers(campaignURL,  getArrCustomerEmails());
         }
 
 
@@ -75,9 +99,6 @@
                     url: "http://www.fidestin.com/supplier/supplierfactory.asmx/SaveCampaignEmails",
                     success: function (result) {
                         alert('Emails saved');
-                     //   for (var i = 0; i < result.d.length; i++) {
-                    //        $('#<%=ListBox1.ClientID%>').append('<option value="' + result.d[i].customerID + '">' + result.d[i].customerEmail + '</option>');
-                    //    }
                     },
                     error: function () {
                         $(document).ajaxError(function (e, xhr, settings, exception) {
@@ -135,7 +156,7 @@
             <img src="images/save-button.png" title="Save campaign emails" onclick="saveEmails();" />
             <br />
             <!--<asp:Button ID="Button2" runat="server" Text="Send" />-->
-            <img src="images/send.jpg" title="Send emails"/>
+            <img src="images/send.jpg" title="Send emails" onclick="sendEmails()"/>
         </div>
     </div>
 </asp:Content>
